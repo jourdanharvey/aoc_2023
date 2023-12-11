@@ -1,0 +1,17 @@
+// .vscode/launch.json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Pytest",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/venv/bin/pytest", // Adjust the path to your virtual environment
+            "args": [
+                "${workspaceFolder}/tests" // Adjust the path to your tests directory
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+        }
+    ]
+}
