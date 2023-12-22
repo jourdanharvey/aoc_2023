@@ -1,5 +1,6 @@
 import unittest
 from day_3.solve_pt1 import DayThreePartOneSolver
+from day_3.solve_pt1_dave import DayThreePartOneDaveSolver
 from day_3.solve_pt1_take_2 import DayThreePartOneTakeTwoSolver, possible_symbol_locations
 
 class TestDay3Part1(unittest.TestCase):
@@ -72,6 +73,11 @@ class TestDay3Part1(unittest.TestCase):
         lines = ['.#','1.']
         ans = self.solver(lines)
         self.assertEqual(1, ans)
+
+    def test_newline(self):
+        lines = ['1\n']
+        ans = self.solver(lines)
+        self.assertEqual(0, ans)
 
     def test_symbol_lower_left(self):
         lines = ['.1','#.']
@@ -218,3 +224,7 @@ class TestDay3Part1Take2(TestDay3Part1):
     def test_possible_symbol_locations(self):
         origin = (0,0)
         self.assertTrue(origin not in set(possible_symbol_locations(*origin)))
+
+class TestDay3Part1Dave(TestDay3Part1):
+    def setUp(self):
+        self.solver = DayThreePartOneDaveSolver.solve

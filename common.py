@@ -3,7 +3,7 @@ from contextlib import contextmanager
 from typing import Any, List, Iterator, Tuple, TypeVar
 
 def file_lines(file_path: str) -> List[str]:
-    return list(file_lines_genertor(file_path))
+    return list([l.strip() for l in file_lines_genertor(file_path)])
 
 
 def file_lines_genertor(file_path: str) -> str:
