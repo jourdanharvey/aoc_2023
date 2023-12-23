@@ -27,6 +27,6 @@ def ignored(*exceptions):
 T = TypeVar("T")
 
 def two_dimensional_generator(rows: List[List[T]]) -> Tuple[int, int, T]:
-    for x, row in enumerate(rows):
-        for y, cell in enumerate(row):
+    for y, row in enumerate(rows):
+        for x, cell in enumerate(row):
             yield x, y, cell

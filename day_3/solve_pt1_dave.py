@@ -24,7 +24,7 @@ class DayThreePartOneDaveSolver(Solver):
                 for j in (-1, 0, 1):
                     try:
                         c = lines[row+i][col+j]
-                        if not (c.isdigit() or c == '.'):
+                        if not (c.isdigit() or c == '.' or c.isspace()):
                             return True
                     except IndexError:
                         pass

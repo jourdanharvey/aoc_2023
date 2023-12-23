@@ -1,22 +1,13 @@
-from itertools import product
-from typing import Any, List
+from typing import List
+
 from common import Solver, file_lines, ignored, two_dimensional_generator
+from day_3.common import is_symbol, surrounding_points
 
-DOT = '.'
-
-CARDINAL_POINTS = set(product([-1,0,1], repeat=2)) - {(0,0)}
-
-def possible_symbol_locations(x, y):
-    for poss_x, poss_y in CARDINAL_POINTS:
-        yield poss_x + x, poss_y + y
-
-def is_symbol(c: str):
-    return c != DOT and not c.isdigit()
 
 def find_symbol(char_x: int, char_y: int, lines: List[str]) -> bool:
-    for x, y in possible_symbol_locations(char_x, char_y):
+    for x, y in surrounding_points(char_x, char_y):
         with ignored(IndexError):
-            c = lines[x][y]
+            c = lines[y][x]
             if is_symbol(c):
                 return True
     else:

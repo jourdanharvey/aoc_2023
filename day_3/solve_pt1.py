@@ -44,7 +44,7 @@ def parse_line(line: str, line_number: int) -> Tuple[Set, Set]:
             part_numbers.add(build_part_number(current_number))
             current_number = []
         # See if we're a symbol and process accordingly
-        if c != '.':
+        if c != '.' and not c.isspace():
             symbols.add(Point(x=idx, y=line_number))
     else:
         # final purge

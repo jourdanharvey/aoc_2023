@@ -1,7 +1,7 @@
 import unittest
 from day_3.solve_pt1 import DayThreePartOneSolver
 from day_3.solve_pt1_dave import DayThreePartOneDaveSolver
-from day_3.solve_pt1_take_2 import DayThreePartOneTakeTwoSolver, possible_symbol_locations
+from day_3.solve_pt1_take_2 import DayThreePartOneTakeTwoSolver, surrounding_points
 
 class TestDay3Part1(unittest.TestCase):
     def setUp(self):
@@ -221,9 +221,9 @@ class TestDay3Part1Take2(TestDay3Part1):
     def setUp(self):
         self.solver = DayThreePartOneTakeTwoSolver.solve
 
-    def test_possible_symbol_locations(self):
+    def test_surrounding_points(self):
         origin = (0,0)
-        self.assertTrue(origin not in set(possible_symbol_locations(*origin)))
+        self.assertTrue(origin not in set(surrounding_points(*origin)))
 
 class TestDay3Part1Dave(TestDay3Part1):
     def setUp(self):
